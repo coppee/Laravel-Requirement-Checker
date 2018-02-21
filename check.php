@@ -10,11 +10,11 @@
  * @author Emerson Carvalho 
  * @version 0.0.1
  */
-$latestLaravelVersion = '5.4';
+$latestLaravelVersion = '5.5';
 
 $laravelVersion = (isset($_GET['v'])) ? (string) $_GET['v'] : $latestLaravelVersion;
 
-if(!in_array($laravelVersion, array('4.2', '5.0', '5.1', '5.2', '5.3', '5.4'))) {
+if(!in_array($laravelVersion, array('4.2', '5.0', '5.1', '5.2', '5.3', '5.4', '5.5'))) {
     $laravelVersion = $latestLaravelVersion;
 }
 
@@ -85,6 +85,16 @@ $reqList = array(
         'xml' => true, 
         'obs' => ''
     ),
+    '5.5' => array(
+        'php' => '7.0.0',
+        'mcrypt' => false, 
+        'openssl' => true, 
+        'pdo' => true, 
+        'mbstring' => true, 
+        'tokenizer' => true, 
+        'xml' => true, 
+        'obs' => ''
+    )
 );
 
 
@@ -185,7 +195,8 @@ if ( function_exists('apache_get_modules') )
         
         <form action="?" method="get" />
             <select name="v" onchange="this.form.submit()">
-                <option value="5.4" <?php echo ($laravelVersion == '5.4') ? 'selected' : '' ?> >Laravel 5.4 Latest</option>
+                <option value="5.5" <?php echo ($laravelVersion == '5.5') ? 'selected' : '' ?> >Laravel 5.5 Latest</option>
+                <option value="5.4" <?php echo ($laravelVersion == '5.4') ? 'selected' : '' ?> >Laravel 5.4</option>
                 <option value="5.3" <?php echo ($laravelVersion == '5.3') ? 'selected' : '' ?> >Laravel 5.3</option>
                 <option value="5.2" <?php echo ($laravelVersion == '5.2') ? 'selected' : '' ?> >Laravel 5.2</option>
                 <option value="5.1" <?php echo ($laravelVersion == '5.1') ? 'selected' : '' ?> >Laravel 5.1</option>
